@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"python.autoComplete.extraPaths": [
+			"${env:CONDA_ENVS_PATH}/lab/Lib/site-packages",
+		],
+		"python.analysis.extraPaths": [
+			"${env:CONDA_ENVS_PATH}/lab/Lib/site-packages"
+		]
+	}
+}
