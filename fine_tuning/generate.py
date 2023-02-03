@@ -6,6 +6,7 @@ import networks
 import torch
 import torch.backends.cudnn as cudnn
 import torchvision.utils as vutils
+import torchvision.transforms as T
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--gpu', type=int, default=0, help='gpu device')
@@ -24,6 +25,12 @@ opt.cuda = (opt.gpu != -1)
 cudnn.benchmark = True
 device = torch.device("cuda:%d" % (opt.gpu) if opt.cuda else "cpu")
 
+loader = T.Compose([
+    T.ToTensor(),
+    T.Resize((256, 256), antialias=True),
+    T.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5]),
+])
+
 ###############   Model  ####################
 netG = networks.define_G(9, 3).to(device)
 netG.load_state_dict(torch.load('cache/%s_netG.pth' % (opt.style_name), map_location=lambda storage, loc: storage))
@@ -31,35 +38,17 @@ netG.eval()
 for p in netG.parameters():
     p.requires_grad = False
 
-
 ###############   Processing   ####################
-def image_loader(image_name):
-    image = cv2.imread(image_name)
-    image = cv2.resize(image, (256, 256))
-    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-    image = torch.from_numpy(image.transpose((2, 0, 1)))
-    image = image.float().div(255)
-    image = image.mul_(2).add_(-1)
-    return image.unsqueeze(0)
+Blank_1 = cv2.imread(opt.glyph_path)
+Blank_2 = cv2.imread(opt.content_path)
+Stylied_1 = cv2.imread(opt.style_path)
+Stylied_1 = cv2.cvtColor(Stylied_1, cv2.COLOR_BGR2RGB)
 
-
-def image_loader_v2(image_name):
-    image = cv2.imread(image_name)
-    image = cv2.resize(image, (256, 256))
-    image = torch.from_numpy(image.transpose((2, 0, 1)))
-    image = image.float().div(255)
-    image = image.mul_(2).add_(-1)
-    return image.unsqueeze(0)
-
-
-def imsave(tensor, title="Output"):
-    vutils.save_image((tensor.data + 1) * 0.5, '%s.png' % (title))
-
-
-Blank_1 = image_loader_v2(opt.glyph_path).to(device)
-Blank_2 = image_loader_v2(opt.content_path).to(device)
-Stylied_1 = image_loader(opt.style_path).to(device)
+Blank_1 = loader(Blank_1).unsqueeze(0).to(device)
+Blank_2 = loader(Blank_2).unsqueeze(0).to(device)
+Stylied_1 = loader(Stylied_1).unsqueeze(0).to(device)
 
 Stylied_2_recon = netG(torch.cat([Blank_2, Blank_1, Stylied_1], 1), 256)
 
-vutils.save_image(Stylied_2_recon.data[0:1, :, :, :] / 2 + 0.5, '%s/%s.png' % (opt.outf, opt.save_name))
+vutils.save_image(Stylied_2_recon.data[0:1, :, :, :] / 2 + 0.5, f"{opt.outf}/{opt.save_name}.png")
+print("saved data")
