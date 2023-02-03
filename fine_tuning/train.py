@@ -1,73 +1,25 @@
-from __future__ import print_function
 import argparse
-import os
 import random
-import torch
-import torch.nn as nn
-import torch.backends.cudnn as cudnn
-import torch.optim as optim
-import torchvision.datasets as dset
-import torchvision.transforms as transforms
-import torchvision.utils as vutils
-from torch.autograd import Variable, grad
+from typing import Optional
+
+import cv2
 import matplotlib.pyplot as plt
 import numpy as np
+import numpy.typing as npt
+import torch
+import torch.backends.cudnn as cudnn
+import torch.nn as nn
+import torch.optim as optim
 import torch.utils.data
-from os import listdir
-from os.path import join
-from PIL import Image
-import math
-import glob
-import cv2
+import torchvision.utils as vutils
+from torch.autograd import Variable, grad
 
-import networks
-from dataset import NewDataset
-
-parser = argparse.ArgumentParser()
-parser.add_argument('--batchSize', type=int, default=2, help='batch size')
-parser.add_argument('--niter', type=int, default=300, help='number of iterations for fine-tuning')
-parser.add_argument('--lr', type=float, default=1e-4, help='learning rate, default=0.0002')
-parser.add_argument('--gpu', type=int, default=-1, help='gpu device, -1 for cpu')
-parser.add_argument('--netf', help='where are netG.pth and netD.pth')
-parser.add_argument('--manualSeed', type=int, help='manual seed')
-parser.add_argument('--style_name', help='name of the style image')
-parser.add_argument('--style_path', help='path to the style image')
-parser.add_argument('--glyph_path', help='path to the corresponding glyph of the style image')
-
-plt.switch_backend('agg')
-
-opt = parser.parse_args()
-print(opt)
-
-if opt.manualSeed is None:
-    opt.manualSeed = random.randint(1, 10000)
-print("Random Seed: ", opt.manualSeed)
-random.seed(opt.manualSeed)
-torch.manual_seed(opt.manualSeed)
-
-opt.cuda = (opt.gpu != -1)
-
-if opt.cuda:
-    torch.cuda.manual_seed_all(opt.manualSeed)
-
-cudnn.benchmark = True
-device = torch.device("cuda:%d" % (opt.gpu) if opt.cuda else "cpu")
-
-###############   Model   ####################
-netG = networks.define_G(9, 3).to(device)
-netD = networks.define_D(12).to(device)
-
-netG.load_state_dict(torch.load('%s/netG.pth' % (opt.netf), map_location=lambda storage, loc: storage))
-netD.load_state_dict(torch.load('%s/netD.pth' % (opt.netf), map_location=lambda storage, loc: storage))
-
-optimizerD = optim.Adam(filter(lambda p: p.requires_grad, netD.parameters()), lr=opt.lr, betas=(0.5, 0.9))
-optimizerG = optim.Adam(filter(lambda p: p.requires_grad, netG.parameters()), lr=opt.lr, betas=(0.5, 0.9))
-
-criterion = nn.L1Loss()
+from fine_tuning.dataset import NewDataset
+from fine_tuning.networks import define_D, define_G
 
 
-###########    Loss   ###########
-def calc_gradient_penalty(netD, real_data, fake_data):
+# ================  Loss  ================
+def calc_gradient_penalty(netD, real_data, fake_data, device):
 
     alpha = torch.rand(real_data.shape[0], 1, 1, 1).to(device)
 
@@ -83,23 +35,60 @@ def calc_gradient_penalty(netD, real_data, fake_data):
                      retain_graph=True,
                      only_inputs=True)[0]
 
-    gradient_penalty = ((gradients.norm(2, dim=1) - 1)**2).mean()
+    gradient_penalty = ((gradients.norm(p=2, dim=1) - 1)**2).mean()  # type: ignore
     return gradient_penalty
 
 
-def main():
-    ###############   Dataset   ##################
-    new_dataset = NewDataset(opt.style_path, opt.glyph_path)
-    loader_ = torch.utils.data.DataLoader(dataset=new_dataset, batch_size=opt.batchSize, shuffle=True, num_workers=8)
+def finetune(
+    base_net_dir: str,
+    style_img_bgr: npt.NDArray[np.uint8],
+    glyph_img_bgr: npt.NDArray[np.uint8],
+    batch_size: int = 2,
+    num_iter: int = 300,
+    learning_rate: float = 1e-4,
+    gpu_id: int = -1,
+    tuned_net_name: Optional[str] = "effect_netG",
+    manual_seed: Optional[int] = None,
+):
+
+    if manual_seed is None:
+        manual_seed = random.randint(1, 10000)
+    print(f"Random Seed: {manual_seed}")
+    random.seed(manual_seed)
+    torch.manual_seed(manual_seed)
+
+    if gpu_id != -1:
+        torch.cuda.manual_seed_all(manual_seed)
+        device = torch.device(f"cuda:{gpu_id}")
+    else:
+        device = torch.device("cpu")
+
+    cudnn.benchmark = True
+
+    # ================  Model  ================
+    netG = define_G(9, 3).to(device)
+    netD = define_D(12).to(device)
+
+    netG.load_state_dict(torch.load(f"{base_net_dir}/netG.pth", map_location=lambda storage, loc: storage))
+    netD.load_state_dict(torch.load(f"{base_net_dir}/netD.pth", map_location=lambda storage, loc: storage))
+
+    optimizerD = optim.Adam(filter(lambda p: p.requires_grad, netD.parameters()), lr=learning_rate, betas=(0.5, 0.9))
+    optimizerG = optim.Adam(filter(lambda p: p.requires_grad, netG.parameters()), lr=learning_rate, betas=(0.5, 0.9))
+
+    criterion = nn.L1Loss()
+
+    # ================  Dataset  ================
+    new_dataset = NewDataset(style_img_bgr, glyph_img_bgr)
+    loader_ = torch.utils.data.DataLoader(dataset=new_dataset, batch_size=batch_size, shuffle=True, num_workers=8)
     loader = iter(loader_)
 
-    ###########   Training   ###########
+    # ================  Training  ================
     CRITIC_ITERS = 2
     lambda_gp = 10
     current_size = 256
     Min_loss = 100000
 
-    for iteration in range(1, opt.niter + 1):
+    for iteration in range(1, num_iter + 1):
 
         ############################
         # (1) Update D network
@@ -117,10 +106,10 @@ def main():
                 loader = iter(loader_)
                 data = next(loader)
 
-            Blank_1 = data['Blank_1'].to(device)
-            Blank_2 = data['Blank_2'].to(device)
-            Stylied_1 = data['Stylied_1'].to(device)
-            Stylied_2 = data['Stylied_2'].to(device)
+            Blank_1 = data["Blank_1"].to(device)
+            Blank_2 = data["Blank_2"].to(device)
+            Stylied_1 = data["Stylied_1"].to(device)
+            Stylied_2 = data["Stylied_2"].to(device)
 
             Stylied_2_recon = netG(torch.cat([Blank_2, Blank_1, Stylied_1], 1), current_size)
 
@@ -131,7 +120,7 @@ def main():
             netD.zero_grad()
             D_real = netD(input_real).mean()
             D_fake = netD(input_fake).mean()
-            gradient_penalty = calc_gradient_penalty(netD, input_real.data, input_fake.data)
+            gradient_penalty = calc_gradient_penalty(netD, input_real.data, input_fake.data, device)
             errD = D_fake.mean() - D_real.mean() + lambda_gp * gradient_penalty
             errD.backward()
             Wasserstein_D = (D_real.mean() - D_fake.mean()).data.mean()
@@ -154,10 +143,10 @@ def main():
             loader = iter(loader_)
             data = next(loader)
 
-        Blank_1 = data['Blank_1'].to(device)
-        Blank_2 = data['Blank_2'].to(device)
-        Stylied_1 = data['Stylied_1'].to(device)
-        Stylied_2 = data['Stylied_2'].to(device)
+        Blank_1 = data["Blank_1"].to(device)
+        Blank_2 = data["Blank_2"].to(device)
+        Stylied_1 = data["Stylied_1"].to(device)
+        Stylied_2 = data["Stylied_2"].to(device)
 
         # 2. netG process
         Stylied_2_recon = netG(torch.cat([Blank_2, Blank_1, Stylied_1], 1), 256)
@@ -174,17 +163,40 @@ def main():
         G_cost.backward()
         optimizerG.step()
 
-        print('[%d/%d] Loss_L1: %.4f Loss_adv: %.4f Wasserstein_D: %.4f' %
-              (iteration, opt.niter, errS2.item(), errD.item(), Wasserstein_D.item()))
+        print("[%d/%d] Loss_L1: %.4f Loss_adv: %.4f Wasserstein_D: %.4f" %
+              (iteration, num_iter, errS2.item(), errD.item(), Wasserstein_D.item()))
 
         if errS2.item() < Min_loss and iteration > 100:
             Min_loss = errS2.item()
 
-            vutils.save_image(Stylied_1.data, 'checkpoints/input_style.png', normalize=True)
-            vutils.save_image(Stylied_2_recon.data, 'checkpoints/output.png', normalize=True)
-            vutils.save_image(Stylied_2.data, 'checkpoints/ground_truth.png', normalize=True)
-            torch.save(netG.state_dict(), 'cache/%s_netG.pth' % (opt.style_name))
+            vutils.save_image(Stylied_1.data, "checkpoints/input_style.png", normalize=True)
+            vutils.save_image(Stylied_2_recon.data, "checkpoints/output.png", normalize=True)
+            vutils.save_image(Stylied_2.data, "checkpoints/ground_truth.png", normalize=True)
+            torch.save(netG.state_dict(), f"cache/{tuned_net_name}.pth")
 
 
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--batchSize", type=int, default=2, help="batch size")
+    parser.add_argument("--niter", type=int, default=300, help="number of iterations for fine-tuning")
+    parser.add_argument("--lr", type=float, default=1e-4, help="learning rate, default=0.0002")
+    parser.add_argument("--gpu", type=int, default=-1, help="gpu device, -1 for cpu")
+    parser.add_argument("--netf", help="where are netG.pth and netD.pth")
+    parser.add_argument("--tuned-net-name", help="fine-tuned netG name")
+    parser.add_argument("--manualSeed", type=int, help="manual seed")
+    parser.add_argument("--style_path", help="path to the style image")
+    parser.add_argument("--glyph_path", help="path to the corresponding glyph of the style image")
+
+    plt.switch_backend('agg')
+    opt = parser.parse_args()
+    print(opt)
+
+    finetune(batch_size=opt.batchSize,
+             num_iter=opt.niter,
+             learning_rate=opt.lr,
+             base_net_dir=opt.netf,
+             glyph_img_bgr=cv2.imread(opt.glyph_path),
+             style_img_bgr=cv2.imread(opt.style_path),
+             gpu_id=opt.gpu,
+             manual_seed=opt.manualSeed,
+             tuned_net_name=opt.tuned_net_name)

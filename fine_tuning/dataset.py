@@ -1,13 +1,11 @@
-import random
-import torch
-import torch.nn as nn
-import torch.backends.cudnn as cudnn
-
-import numpy as np
-import torch.utils.data as data
-
 import glob
+import random
+
 import cv2
+import numpy as np
+import numpy.typing as npt
+import torch.utils.data as data
+import torchvision.transforms as T
 
 # Important paths
 Decoration_Data = [img for img in glob.glob('Data/Decoration/*.png')]
@@ -37,19 +35,14 @@ def RandomColorType1(Character, random1, random2, random3, r1, r2, r3, r4, r5, r
     return Result
 
 
-def ToTensor(pic):
-    img = torch.from_numpy(pic.transpose((2, 0, 1)))
-    return img.float().div(255)
-
-
 class NewDataset(data.Dataset):
-    def __init__(self, style_path, glyph_path):
+    def __init__(self, style_img_bgr: npt.NDArray[np.uint8], glyph_img_bgr: npt.NDArray[np.uint8]):
         super(NewDataset, self).__init__()
-        self.Blank_1 = default_loader(glyph_path)
+        self.Blank_1 = glyph_img_bgr
         self.Blank_1 = cv2.resize(self.Blank_1, (320, 320))
         self.Blank_2 = self.Blank_1.copy()
 
-        self.Stylied_1 = default_loader(style_path)
+        self.Stylied_1 = style_img_bgr
         self.Stylied_1 = cv2.resize(self.Stylied_1, (320, 320))
         self.Stylied_2 = self.Stylied_1.copy()
 
@@ -58,6 +51,10 @@ class NewDataset(data.Dataset):
         self.flip = False
 
         self.training_set = glob.glob(training_set_path + "/*/train")
+        self.loader = T.Compose([
+            T.ToTensor(),
+            T.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5]),
+        ])
 
     def Process(self, img2, size, x1, y1, flip_rand):
         h, w, c = img2.shape
@@ -74,9 +71,7 @@ class NewDataset(data.Dataset):
             elif flip_rand <= 0.75:
                 img2 = cv2.flip(img2, -1)
 
-        img2 = ToTensor(img2)
-
-        return img2.mul_(2).add_(-1)
+        return self.loader(img2)
 
     def __getitem__(self, index):
         flip_rand = random.random()
@@ -145,7 +140,6 @@ class NewDataset(data.Dataset):
 
         Stylied_2 = cv2.cvtColor(Stylied_2, cv2.COLOR_BGR2RGB)
         Data['Stylied_2'] = self.Process(Stylied_2, size, x2, y2, flip_rand)
-
         return Data
 
     def __len__(self):
