@@ -47,7 +47,7 @@ def finetune(
     num_iter: int = 300,
     learning_rate: float = 1e-4,
     gpu_id: int = -1,
-    tuned_net_name: Optional[str] = "effect_netG",
+    tuned_net_name: str = "effect_netG",
     manual_seed: Optional[int] = None,
 ):
 
