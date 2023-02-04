@@ -1,0 +1,65 @@
+% set home directory
+\providecommand{\homedir}{.} 
+% ##############################################################################
+% autodetect-engine :エンジン自動判別
+% dvi=dvipdfmx      :DVIモード時はdvipdfmxドライバに指定
+% ja=standard       :和文ドライバをstandardに指定
+% a4paper           :用紙サイズをA4に指定
+% jbase=12pt        :和文を基準としたフォントサイズを12ptに指定
+% magstyle=nomag*   :mag設定を用いず、NSFFの実装にもパッチをあてる
+% ##############################################################################
+\documentclass[autodetect-engine,dvi=dvipdfmx,ja=standard,a4j,jbase=11pt,magstyle=nomag*]{bxjsreport}
+\input{settings/preamble.tex}
+% ##############################################################################
+\begin{document}
+
+% Suppresses printing of bibliography in subfiles
+\setboolean{printBibInSubfiles}{false}
+
+% title
+\maketitle
+% ##############################################################################
+
+% abstract
+\frontmatter
+
+\subfile{documents/abstract}
+
+% table of contents
+\tableofcontents
+
+% list of figures
+\listoffigures
+
+% list of tables
+\listoftables
+
+% ##############################################################################
+
+\mainmatter
+
+\subfile{documents/chapter1}
+\subfile{documents/chapter2}
+\subfile{documents/chapter3}
+\subfile{documents/chapter4}
+\subfile{documents/chapter5}
+\subfile{documents/chapter6}
+
+% ##############################################################################
+
+\appendix
+
+% \include{appendixa}
+% \include{appendixb}
+
+% ##############################################################################
+
+\backmatter
+
+% acknowledgment
+\subfile{documents/acknowledgment}
+
+% references
+\printbibliography[title=参考文献]
+
+\end{document}

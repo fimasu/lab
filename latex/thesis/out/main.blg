@@ -1,0 +1,18 @@
+[0] Config.pm:306> INFO - This is Biber 2.18
+[0] Config.pm:309> INFO - Logfile is 'out/main.blg'
+[112] biber-MSWIN32:340> INFO - === 
+[149] Biber.pm:418> INFO - Reading 'out/main.bcf'
+[268] Biber.pm:978> INFO - Found 1 citekeys in bib section 0
+[283] Biber.pm:4401> INFO - Processing section 0
+[296] Biber.pm:4592> INFO - Looking for bibtex file './reference.bib' for section 0
+[338] bibtex.pm:1713> INFO - LaTeX decoding ...
+[343] bibtex.pm:1518> INFO - Found BibTeX data source './reference.bib'
+[380] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[380] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[380] Biber.pm:4221> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[380] Biber.pm:4227> INFO - No sort tailoring available for locale 'en-US'
+[383] bbl.pm:654> INFO - Writing 'out/main.bbl' with encoding 'UTF-8'
+[383] bbl.pm:655> INFO - Converting UTF-8 to TeX macros on output to .bbl
+[384] bbl.pm:757> INFO - Output to out/main.bbl
+[384] Biber.pm:130> WARN - legacy month field 'June' in entry 'typography2019' is not an integer - this will probably not sort properly.
+[384] Biber.pm:132> INFO - WARNINGS: 1

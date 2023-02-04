@@ -1,0 +1,67 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\preamble{%
+\providecommand*\hyphen{-}%
+}
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{typography2019}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=4e059e4116c62a64406812830b8c1f99}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Wenjing},
+           giveni={W\bibinitperiod}}}%
+        {{hash=e97cb99f7ec95531e680d1c399e23717}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Jiaying},
+           giveni={J\bibinitperiod}}}%
+        {{hash=a8cab462a0a4a31bc152995dba309a5d}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Shuai},
+           giveni={S\bibinitperiod}}}%
+        {{hash=8ae7e65e05955e78f45f85b82b3bd270}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Zongming},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{7e67faf1a3229da67bb13e9aab05b610}
+      \strng{fullhash}{ccc87a668b472fbb355a2549d155253b}
+      \strng{bibnamehash}{ccc87a668b472fbb355a2549d155253b}
+      \strng{authorbibnamehash}{ccc87a668b472fbb355a2549d155253b}
+      \strng{authornamehash}{7e67faf1a3229da67bb13e9aab05b610}
+      \strng{authorfullhash}{ccc87a668b472fbb355a2549d155253b}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}
+      \field{month}{6}
+      \field{title}{Typography with Decor: Intelligent Text Style Transfer}
+      \field{year}{2019}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
