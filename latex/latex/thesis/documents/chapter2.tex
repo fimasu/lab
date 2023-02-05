@@ -1,0 +1,62 @@
+% set home directory
+\providecommand{\homedir}{..} 
+% load the preamble of main.tex by subfiles
+\documentclass[\homedir/main.tex]{subfiles}
+% ##############################################################################
+\begin{document}
+% set chapter numbering to work correctly even when separate compilation using subfile
+\setcounter{chapter}{1}
+\chapter{関連研究}\label{chap:related_works}
+本研究ではStyle Transferを用いてデザイン文字列を生成している．（\cref{chap:methods}で詳述する．）
+そこで，本章では本研究の関連研究として，
+\cref{sec:neural_style_transfer}でNeural Networkを用いたStyle Transferに関する研究を紹介し，
+\cref{sec:text_effects_transfer}でStyle Transferをデザイン文字に応用した研究を紹介し，
+\cref{sec:logo_style_transfer}でStyle Transferをロゴに応用した研究を紹介する．
+本章の最後に，\cref{sec:positioning}でこれらの先行研究を踏まえた本研究の位置づけについて述べる．
+
+\section{Neural Networkを用いたStyle Transfer}\label{sec:neural_style_transfer}
+そもそも，Style Transferとは「対象の構造を決定づけるデータ」と
+「対象の見た目や雰囲気を決定づけるデータ」の二種類を上手く融合させ，
+新たなデータを生成する技術である．
+この二種類のStyle Transferへの入力データのうち，「対象の構造を決定づけるデータ」は「コンテンツ」と呼ばれ，
+「対象の見た目や雰囲気を決定づけるデータ」は「スタイル」と呼ばれている．
+Style Transferの主要なタスクの一つである画風変換を例にとると，
+「画像中の物体の輪郭や配置」が「コンテンツ」にあたり，
+「画像の色使いやタッチ」が「スタイル」にあたる．
+つまり，Style Transferによる画風変換は「ある画像中の物体の輪郭や配置を可能な限り保存しつつ，
+色使いやタッチを別の画像のものに似せるタスク」だといえる．
+
+現在，このStyle Transferによる画風変換の分野では，
+Neural Networkを用いたアプローチが盛んに研究されている．
+そのきっかけとなったのが\cite{Gatys_2016_CVPR}である．
+
+
+\section{文字の効果や装飾のStyle Transfer}\label{sec:text_effects_transfer}
+Neural Networkを用いてはいないが重要
+\cite{Yang_2017_CVPR}
+
+文字の効果や装飾をStyle Transferによって転写する研究がある
+\cite{Yang2019Controllable}
+\cite{typography2019}
+\cite{Yang2019TETGAN}
+
+\section{Style Transferとロゴ}\label{sec:logo_style_transfer}
+Style Transferを用いてロゴ作成を行う研究がある
+
+\cite{icpram20}
+
+\cite{oai:irdb.nii.ac.jp:01211:0005350653}
+
+
+\section{本研究の位置づけ}\label{sec:positioning}
+以上に述べたような先行研究では，
+文字列を含んだデザインの作成は技術や時間を要するが,
+スタイル転写を応用することでこれを支援することを目的とする．
+また、文字列を含んだデザインには歪みがあることがある.
+こうした歪みは単にスタイルの転写を行うだけでは転写できない．
+そこで、歪みのあるデザインからの歪みの推定・転写を可能にし、
+単なるスタイル転写では扱えないものに対応することを目指す.
+
+
+\printBibForSubfiles
+\end{document}

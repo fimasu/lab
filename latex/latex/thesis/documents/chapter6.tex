@@ -1,0 +1,16 @@
+% set home directory
+\providecommand{\homedir}{..} 
+% load the preamble of main.tex by subfiles
+\documentclass[\homedir/main.tex]{subfiles}
+% ##############################################################################
+\begin{document}
+% set chapter numbering to work correctly even when separate compilation using subfile
+\setcounter{chapter}{5}
+\chapter{結論}\label{chap:summary}
+
+\section{まとめ}
+
+\section{今後の課題}
+
+\printBibForSubfiles
+\end{document}

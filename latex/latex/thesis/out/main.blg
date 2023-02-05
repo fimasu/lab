@@ -1,0 +1,20 @@
+[0] Config.pm:306> INFO - This is Biber 2.18
+[0] Config.pm:309> INFO - Logfile is 'out/main.blg'
+[113] biber-MSWIN32:340> INFO - === 
+[150] Biber.pm:418> INFO - Reading 'out/main.bcf'
+[271] Biber.pm:978> INFO - Found 7 citekeys in bib section 0
+[289] Biber.pm:4401> INFO - Processing section 0
+[302] Biber.pm:4592> INFO - Looking for bibtex file './reference.bib' for section 0
+[346] bibtex.pm:1713> INFO - LaTeX decoding ...
+[364] bibtex.pm:1518> INFO - Found BibTeX data source './reference.bib'
+[451] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[451] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[451] Biber.pm:4221> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[451] Biber.pm:4227> INFO - No sort tailoring available for locale 'en-US'
+[463] bbl.pm:654> INFO - Writing 'out/main.bbl' with encoding 'UTF-8'
+[463] bbl.pm:655> INFO - Converting UTF-8 to TeX macros on output to .bbl
+[471] bbl.pm:757> INFO - Output to out/main.bbl
+[472] Biber.pm:130> WARN - legacy month field 'June' in entry 'Gatys_2016_CVPR' is not an integer - this will probably not sort properly.
+[472] Biber.pm:130> WARN - legacy month field 'July' in entry 'Yang_2017_CVPR' is not an integer - this will probably not sort properly.
+[472] Biber.pm:130> WARN - legacy month field 'June' in entry 'typography2019' is not an integer - this will probably not sort properly.
+[472] Biber.pm:132> INFO - WARNINGS: 3

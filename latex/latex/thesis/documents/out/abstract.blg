@@ -1,0 +1,10 @@
+[0] Config.pm:306> INFO - This is Biber 2.18
+[0] Config.pm:309> INFO - Logfile is 'out/abstract.blg'
+[113] biber-MSWIN32:340> INFO - === 
+[150] Biber.pm:418> INFO - Reading 'out/abstract.bcf'
+[270] Biber.pm:978> INFO - Found 0 citekeys in bib section 0
+[286] bbl.pm:654> INFO - Writing 'out/abstract.bbl' with encoding 'UTF-8'
+[286] bbl.pm:655> INFO - Converting UTF-8 to TeX macros on output to .bbl
+[286] bbl.pm:757> INFO - Output to out/abstract.bbl
+[286] Biber.pm:130> WARN - The file 'out/abstract.bcf' does not contain any citations!
+[286] Biber.pm:132> INFO - WARNINGS: 1

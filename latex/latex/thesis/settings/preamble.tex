@@ -1,0 +1,378 @@
+\RequirePackage{ifptex,ifxetex,ifluatex}
+\ifluatex
+    \usepackage{bxcalcux}
+    \ltjsetparameter{jacharrange={-2,-3}}
+    \usepackage{luatexja-otf}
+    \usepackage{bxbase}
+\else\ifxetex
+        % \usepackage{zxjatype}
+        % \usepackage[macros]{zxotf}
+        \XeTeXgenerateactualtext=1
+        \usepackage{xltxtra}
+        \usepackage{bxbase}
+    \else\ifuptex
+            \usepackage{otf}
+            \usepackage[prefernoncjk]{pxcjkcat}
+            \cjkcategory{sym11,sym18,sym19}{cjk}
+            \usepackage[utf8]{inputenc}
+            \usepackage{pxbase}
+        \else\ifstrictptex
+                \usepackage{otf}
+                \usepackage[utf8]{inputenc}
+                \usepackage{pxbase}
+            \fi\fi\fi\fi
+
+\usepackage[LGR,T2A,T1]{fontenc}
+
+% graphic setting (xcolor?)
+\usepackage[dvipdfmx]{graphicx, color}
+
+\usepackage{grffile}
+% paper layout setting
+\usepackage{setspace}
+
+% font setting
+\usepackage{amsmath, amssymb}
+\usepackage{newtxtext}
+\usepackage[slantedGreek]{newtxmath}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{fix-cm}
+
+% caption setting
+\usepackage[font=bf,labelfont=bf,labelsep=quad]{caption}
+
+% title font style
+\renewcommand{\headfont}{\bfseries}
+
+
+% line skip setting
+
+% a) basic english lineskip (for article, )
+% \narrowbaselines
+
+% b) basic japanese lineskip
+% \widebaselines
+
+% c) double-spaced japanese lineskip (= 2 * basic english lineskip)
+\narrowbaselines
+\usepackage{setspace}
+\doublespacing
+% \onehalfspacing
+
+% d) others using setspace package
+% \usepackage{setspace}
+% \setstretch{1.3}
+% \setstretch{1.5}
+
+% e) othes using latex command \baselinestretch
+% \renewcommand{\baselinestretch}{1.3}
+% \renewcommand{\baselinestretch}{1.5}
+
+
+% header and footer setting
+% \usepackage{fancyhdr}
+% \makeatletter
+% \renewcommand{\chapter}{%
+%   \if@openright\cleardoublepage\else\clearpage\fi
+%   \global\@topnum\z@
+%   \secdef\@chapter\@schapter}
+% \makeatother
+% \addtolength{\headheight}{\baselineskip}
+% \lhead[]{}
+% \rhead[\rightmark]{\rightmark}
+% \cfoot[\thepage]{\thepage}
+% \pagestyle{fancy}
+
+
+% table of contents setting
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+% Command             10pt    11pt    12pt
+% \tiny               5       6       6
+% \scriptsize         7       8       8
+% \footnotesize       8       9       10
+% \small              9       10      10.95
+% \normalsize         10      10.95   12
+% \large              12      12      14.4
+% \Large              14.4    14.4    17.28
+% \LARGE              17.28   17.28   20.74
+% \huge               20.74   20.74   24.88
+% \Huge               24.88   24.88   24.88
+
+\newcommand{\kintou}[2]{%
+    \leavevmode
+    \hbox to #1{%
+        \setkanjiskip{0truept plus 1fill minus 1fill}
+        \setxkanjiskip{\getkanjiskip}
+        #2%
+    }}
+
+\newcommand{\spacedjpbox}[2]{%
+    \leavevmode
+    \mbox{%
+        \setkanjiskip{#1 plus 0truept minus 0truept}
+        \setxkanjiskip{\getkanjiskip}
+        #2%
+    }}
+
+\ifluatex
+    \usepackage{lltjext}
+    %
+\else\ifptex
+        \usepackage{plext}
+        \usepackage{plextarray}
+        \usepackage{plextdelarray}
+        %
+    \fi\fi
+
+% for creating graphic elements
+\usepackage{tikz}
+
+% e-TeX tools
+\usepackage{etoolbox}
+
+\newcommand{\circled}[2][]{%
+    \tikz[baseline=(char.base)]{%
+        \node[shape = circle, draw, inner sep = 1pt]
+        (char) {\phantom{\ifblank{#1}{#2}{#1}}};%
+        \node at (char.center) {\makebox[0pt][c]{#2}};}}
+\robustify{\circled}
+
+
+\makeatletter
+%
+\newcommand*{\years}[1]{\gdef\@years{#1}}
+% \newcommand*{\adviser}[1]{\gdef\@adviser{#1}}
+% \newcommand*{\adviserposition}[1]{\gdef\@adviserposition{#1}}
+\newcommand*{\department}[1]{\gdef\@department{#1}}
+\newcommand*{\fieldandcourse}[1]{\gdef\@fieldandcourse{#1}}
+%
+\newcommand*{\spinetitle}[1]{\gdef\@spinetitle{#1}}
+\newcommand*{\spineyears}[1]{\gdef\@spineyears{#1}}
+\newcommand*{\spinedepartment}[1]{\gdef\@spinedepartment{#1}}
+\newcommand*{\spinefieldandcourse}[1]{\gdef\@spinefieldandcourse{#1}}
+\newcommand*{\spinedepartmentfoot}[1]{\gdef\@spinedepartmentfoot{#1}}
+%
+%
+\renewcommand{\maketitle}{%
+    %
+    \begin{titlepage}%
+        %
+        % \newgeometry{left=15truemm,right=15truemm}%
+        \centering%
+        %
+        \vfil%
+        %
+        \begin{minipage}[c][0.2\textheight][c]{\textwidth}%
+            \centering%
+            \onehalfspacing%
+            {\fontsize{29.86truept}{29.86truept}\selectfont\mcfamily%
+                \@title%
+                \par}%
+        \end{minipage}%
+        %
+        \vspace{0.35\textheight}%
+        \vfil%
+        %
+        \begin{minipage}[c][0.1\textheight][c]{\textwidth}%
+            \centering%
+            {\fontsize{24.88truept}{24.88truept}\selectfont%
+                \@years%
+                \par}%
+        \end{minipage}%
+        %
+        \vspace{0.05\textheight}%
+        \vfil%
+        %
+        \begin{minipage}[c][0.3\textheight][c]{\textwidth}%
+            \centering%
+            \singlespacing%
+            {\fontsize{24.88truept}{24.88truept}\selectfont\spacedjpbox{2.49truept}{%
+                    \@department%
+                }\par}%
+            %\vspace{24.88truept}%
+            {\fontsize{24.88truept}{24.88truept}\selectfont\spacedjpbox{2.49truept}{%
+                    \@fieldandcourse%
+                }\par}%
+            \vspace{49.76truept}%
+            % {\fontsize{24.88truept}{24.88truept}\selectfont\kintou{0.4\textwidth}{%
+            {\fontsize{24.88truept}{24.88truept}\selectfont\spacedjpbox{18.66truept}{%
+                    \@author%
+                }\par}%
+        \end{minipage}%
+        %
+        \vfil%
+        %
+        % \restoregeometry%
+        %
+    \end{titlepage}%
+}
+%
+%
+\newcommand{\makespinebase}{%
+    %
+    \begin{tabular}{|c|}%
+        %
+        \begin{minipage}[c][287truemm][c]{10truemm}%
+            \centering%
+            %
+            \vfil%
+            %
+            % year number
+            \begin{minipage}[c][12truemm][c]{\textwidth}%
+                \centering%
+                {\fontsize{10truept}{10truept}\selectfont%
+                    \circled[00000]{\@spineyears}%
+                }%
+            \end{minipage}%
+            %
+            \vfil%
+            %
+            \ifxetex
+                %
+                \rotatebox{-90}{%
+                    \defaultfontfeatures{Vertical=RotatedGlyphs,RawFeature={vertical}}%
+                    \begin{minipage}[c][\textwidth][c]{60truemm}%
+                        \raggedright%
+                        \doublespacing%
+                        {\fontsize{10truept}{10truept}\selectfont\spacedjpbox{1.0truept}{%
+                                \@spinedepartment%
+                            }\par}%
+                        {\fontsize{10truept}{10truept}\selectfont\spacedjpbox{1.0truept}{%
+                                \@spinefieldandcourse%
+                            }\par}%
+                    \end{minipage}%
+                    \defaultfontfeatures{Vertical=ResetAll,RawFeature={}}%
+                }%
+                %
+                \vfil%
+                %
+                \rotatebox{-90}{%
+                    \defaultfontfeatures{Vertical=RotatedGlyphs,RawFeature={vertical}}%
+                    \begin{minipage}[c][\textwidth][c]{125truemm}%
+                        \raggedright%
+                        \onehalfspacing%
+                        {\fontsize{10truept}{10truept}\selectfont%
+                            \@spinetitle%
+                            \par}%
+                    \end{minipage}%
+                    \defaultfontfeatures{Vertical=ResetAll,RawFeature={}}%
+                }%
+                %
+                \vfil%
+                %
+                \rotatebox{-90}{%
+                    \defaultfontfeatures{Vertical=RotatedGlyphs,RawFeature={vertical}}%
+                    \begin{minipage}[c][\textwidth][c]{45truemm}%
+                        \raggedleft%
+                        {\fontsize{10truept}{10truept}\selectfont\spacedjpbox{5.0truept}{%
+                                \@author%
+                            }\par}%
+                    \end{minipage}%
+                    \defaultfontfeatures{Vertical=ResetAll,RawFeature={}}
+                }%
+                %
+            \else
+                %
+                \begin{minipage}<t>[c][\textwidth][c]{60truemm}%
+                    \raggedright%
+                    \doublespacing%
+                    {\fontsize{10truept}{10truept}\selectfont\spacedjpbox{1.0truept}{%
+                            \@spinedepartment%
+                        }\par}%
+                    {\fontsize{10truept}{10truept}\selectfont\spacedjpbox{1.0truept}{%
+                            \@spinefieldandcourse%
+                        }\par}%
+                \end{minipage}%
+                %
+                \vfil%
+                %
+                \begin{minipage}<t>[c][\textwidth][c]{125truemm}%
+                    \raggedright%
+                    \onehalfspacing%
+                    {\fontsize{10truept}{10truept}\selectfont%
+                        \@spinetitle%
+                        \par}%
+                \end{minipage}%
+                %
+                \vfil%
+                %
+                \begin{minipage}<t>[c][\textwidth][c]{45truemm}%
+                    \raggedleft%
+                    {\fontsize{10truept}{10truept}\selectfont\spacedjpbox{5.0truept}{%
+                            \@author%
+                        }\par}%
+                \end{minipage}%
+            \fi
+            %
+            \vspace*{25truemm}%
+            \vfil%
+            %
+            \begin{minipage}[c][20truemm][c]{\textwidth}%
+                \centering%
+                \onehalfspacing
+                {\fontsize{10truept}{10truept}\selectfont%
+                    \@spinedepartmentfoot%
+                    \par}%
+            \end{minipage}%
+            %
+            \vfil%
+            %
+        \end{minipage}%
+        % }
+    \end{tabular}%
+    %
+}
+%
+%
+\newcommand{\makespineonce}{%
+    \begin{titlepage}%
+        %
+        \newgeometry{top=4truemm,bottom=4truemm,left=5truemm,right=5truemm}%
+        %textheight = 297mm - 8mm = 289mm -> spine: 287mm
+        %
+        \vfil%
+        %
+        \makespinebase%
+        %
+        \vfil%
+        %
+        \restoregeometry%
+        %
+    \end{titlepage}%
+}
+%
+%
+\newcommand{\makespine}[1][5]{%
+    \begin{titlepage}%
+        \newgeometry{top=4truemm,bottom=4truemm,left=5truemm,right=5truemm}%
+        \vfil%
+        %
+        \newcount\cntspine%
+        \newcount\cntmax%
+        \cntspine=1%
+        \cntmax=#1%
+        \advance\cntmax-1%
+        \loop%
+        \makespinebase%
+        \hspace{10truemm}%
+        \advance\cntspine1%
+        \ifnum\cntspine<\cntmax \repeat%
+        %
+        \makespinebase%
+        \vfil%
+        \restoregeometry%
+    \end{titlepage}%
+}
+%
+%
+\makeatother
+
+% load thesis info
+\input{settings/thesis_info}
+
+% load cumstom preamble
+\input{settings/custom_preamble}
+

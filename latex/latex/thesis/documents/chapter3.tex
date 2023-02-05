@@ -1,0 +1,19 @@
+% set home directory
+\providecommand{\homedir}{..} 
+% load the preamble of main.tex by subfiles
+\documentclass[\homedir/main.tex]{subfiles}
+% ##############################################################################
+\begin{document}
+% set chapter numbering to work correctly even when separate compilation using subfile
+\setcounter{chapter}{2}
+\chapter{理論}\label{chap:theories}
+
+
+\section{Generative Adversarial Network}
+
+\section{Wasserstein GAN}
+
+\section{WGAN with a gradient penalty}
+
+\printBibForSubfiles
+\end{document}

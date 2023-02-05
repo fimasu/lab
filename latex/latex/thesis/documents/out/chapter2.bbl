@@ -1,0 +1,288 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\preamble{%
+\providecommand*\hyphen{-}%
+}
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{Gatys_2016_CVPR}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=b463321fbc7e07dca928b179ef786d43}{%
+           family={Gatys},
+           familyi={G\bibinitperiod},
+           given={Leon\bibnamedelima A.},
+           giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=76032390b4e0ce051a46193f6091dc26}{%
+           family={Ecker},
+           familyi={E\bibinitperiod},
+           given={Alexander\bibnamedelima S.},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=653ad8c2337d9615a186b743cc8d69a5}{%
+           family={Bethge},
+           familyi={B\bibinitperiod},
+           given={Matthias},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{467d36c2c62b4f85d9a0e313c593bf43}
+      \strng{fullhash}{467d36c2c62b4f85d9a0e313c593bf43}
+      \strng{bibnamehash}{467d36c2c62b4f85d9a0e313c593bf43}
+      \strng{authorbibnamehash}{467d36c2c62b4f85d9a0e313c593bf43}
+      \strng{authornamehash}{467d36c2c62b4f85d9a0e313c593bf43}
+      \strng{authorfullhash}{467d36c2c62b4f85d9a0e313c593bf43}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}
+      \field{month}{6}
+      \field{title}{Image Style Transfer Using Convolutional Neural Networks}
+      \field{year}{2016}
+    \endentry
+    \entry{Yang_2017_CVPR}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=a8cab462a0a4a31bc152995dba309a5d}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Shuai},
+           giveni={S\bibinitperiod}}}%
+        {{hash=e97cb99f7ec95531e680d1c399e23717}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Jiaying},
+           giveni={J\bibinitperiod}}}%
+        {{hash=7863575997cb36d24a3430352a60c580}{%
+           family={Lian},
+           familyi={L\bibinitperiod},
+           given={Zhouhui},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=8ae7e65e05955e78f45f85b82b3bd270}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Zongming},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{26f5b4a3e89ae47fd69f94d995236abf}
+      \strng{fullhash}{739906550c479fd5cd0cfffe9e49269a}
+      \strng{bibnamehash}{739906550c479fd5cd0cfffe9e49269a}
+      \strng{authorbibnamehash}{739906550c479fd5cd0cfffe9e49269a}
+      \strng{authornamehash}{26f5b4a3e89ae47fd69f94d995236abf}
+      \strng{authorfullhash}{739906550c479fd5cd0cfffe9e49269a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}
+      \field{month}{7}
+      \field{title}{Awesome Typography: Statistics-Based Text Effects Transfer}
+      \field{year}{2017}
+    \endentry
+    \entry{Yang2019Controllable}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=a8cab462a0a4a31bc152995dba309a5d}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Shuai},
+           giveni={S\bibinitperiod}}}%
+        {{hash=4f87ba962b43f4d664922e1f3c38c9c0}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Zhangyang},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=9a64d1e29f2942e713f5b56bd8317df7}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Zhaowen},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=7d37b8eddbfa29411e3973fce2cd7773}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Ning},
+           giveni={N\bibinitperiod}}}%
+        {{hash=e97cb99f7ec95531e680d1c399e23717}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Jiaying},
+           giveni={J\bibinitperiod}}}%
+        {{hash=8ae7e65e05955e78f45f85b82b3bd270}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Zongming},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{cd7f8f8e44829eff05d73e98cef3218b}
+      \strng{fullhash}{61bc3fdb53fde28cf1b0d97b4b9cab43}
+      \strng{bibnamehash}{61bc3fdb53fde28cf1b0d97b4b9cab43}
+      \strng{authorbibnamehash}{61bc3fdb53fde28cf1b0d97b4b9cab43}
+      \strng{authornamehash}{cd7f8f8e44829eff05d73e98cef3218b}
+      \strng{authorfullhash}{61bc3fdb53fde28cf1b0d97b4b9cab43}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{International Conference on Computer Vision}
+      \field{title}{Controllable Artistic Text Style Transfer via Shape-Matching GAN}
+      \field{year}{2019}
+    \endentry
+    \entry{typography2019}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=4e059e4116c62a64406812830b8c1f99}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Wenjing},
+           giveni={W\bibinitperiod}}}%
+        {{hash=e97cb99f7ec95531e680d1c399e23717}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Jiaying},
+           giveni={J\bibinitperiod}}}%
+        {{hash=a8cab462a0a4a31bc152995dba309a5d}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Shuai},
+           giveni={S\bibinitperiod}}}%
+        {{hash=8ae7e65e05955e78f45f85b82b3bd270}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Zongming},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{7e67faf1a3229da67bb13e9aab05b610}
+      \strng{fullhash}{ccc87a668b472fbb355a2549d155253b}
+      \strng{bibnamehash}{ccc87a668b472fbb355a2549d155253b}
+      \strng{authorbibnamehash}{ccc87a668b472fbb355a2549d155253b}
+      \strng{authornamehash}{7e67faf1a3229da67bb13e9aab05b610}
+      \strng{authorfullhash}{ccc87a668b472fbb355a2549d155253b}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}
+      \field{month}{6}
+      \field{title}{Typography with Decor: Intelligent Text Style Transfer}
+      \field{year}{2019}
+    \endentry
+    \entry{Yang2019TETGAN}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=a8cab462a0a4a31bc152995dba309a5d}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Shuai},
+           giveni={S\bibinitperiod}}}%
+        {{hash=e97cb99f7ec95531e680d1c399e23717}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Jiaying},
+           giveni={J\bibinitperiod}}}%
+        {{hash=4e059e4116c62a64406812830b8c1f99}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Wenjing},
+           giveni={W\bibinitperiod}}}%
+        {{hash=8ae7e65e05955e78f45f85b82b3bd270}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Zongming},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{cac688ac9495f8c18dbbdde12f22a599}
+      \strng{fullhash}{d2f5d54b4fda7f227fa2b309eea787ed}
+      \strng{bibnamehash}{d2f5d54b4fda7f227fa2b309eea787ed}
+      \strng{authorbibnamehash}{d2f5d54b4fda7f227fa2b309eea787ed}
+      \strng{authornamehash}{cac688ac9495f8c18dbbdde12f22a599}
+      \strng{authorfullhash}{d2f5d54b4fda7f227fa2b309eea787ed}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{AAAI Conference on Artificial Intelligence}
+      \field{title}{TET-GAN: Text Effects Transfer via Stylization and Destylization}
+      \field{year}{2019}
+    \endentry
+    \entry{icpram20}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=a09e035ae45acc29f667c1107a02a52a}{%
+           family={Ter{-}Sarkisov.},
+           familyi={T\bibinitperiod},
+           given={Aram},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {INSTICC}%
+      }
+      \list{publisher}{1}{%
+        {SciTePress}%
+      }
+      \strng{namehash}{a09e035ae45acc29f667c1107a02a52a}
+      \strng{fullhash}{a09e035ae45acc29f667c1107a02a52a}
+      \strng{bibnamehash}{a09e035ae45acc29f667c1107a02a52a}
+      \strng{authorbibnamehash}{a09e035ae45acc29f667c1107a02a52a}
+      \strng{authornamehash}{a09e035ae45acc29f667c1107a02a52a}
+      \strng{authorfullhash}{a09e035ae45acc29f667c1107a02a52a}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 9th International Conference on Pattern Recognition Applications and Methods - ICPRAM,}
+      \field{isbn}{978-989-758-397-1}
+      \field{issn}{2184-4313}
+      \field{title}{Network of Steel: Neural Font Style Transfer from Heavy Metal to Corporate Logos}
+      \field{year}{2020}
+      \field{pages}{621\bibrangedash 629}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.5220/0009343906210629
+      \endverb
+    \endentry
+    \entry{oai:irdb.nii.ac.jp:01211:0005350653}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=45cf15f5bc2064443a9c6b42bac8352c}{%
+           family={アタルサイハン},
+           familyi={ア\bibinitperiod},
+           given={ガントゥグス},
+           giveni={ガ\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {九州大学}%
+      }
+      \strng{namehash}{45cf15f5bc2064443a9c6b42bac8352c}
+      \strng{fullhash}{45cf15f5bc2064443a9c6b42bac8352c}
+      \strng{bibnamehash}{45cf15f5bc2064443a9c6b42bac8352c}
+      \strng{authorbibnamehash}{45cf15f5bc2064443a9c6b42bac8352c}
+      \strng{authornamehash}{45cf15f5bc2064443a9c6b42bac8352c}
+      \strng{authorfullhash}{45cf15f5bc2064443a9c6b42bac8352c}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Typographic Design Generation Using Neural Style Transfer}
+      \field{type}{phdthesis}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://irdb.nii.ac.jp/01211/0005350653
+      \endverb
+      \verb{url}
+      \verb https://irdb.nii.ac.jp/01211/0005350653
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

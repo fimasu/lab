@@ -1,0 +1,22 @@
+% set home directory
+\providecommand{\homedir}{..} 
+% load the preamble of main.tex by subfiles
+\documentclass[\homedir/main.tex]{subfiles}
+% ##############################################################################
+\begin{document}
+% set chapter numbering to work correctly even when separate compilation using subfile
+\setcounter{chapter}{3}
+\chapter{提案手法}\label{chap:methods}
+
+\section{はじめに}
+
+\section{対象とするデザイン文字列}
+
+\section{処理の手順}
+
+\section{文字列の歪みの転写}
+
+\section{色や装飾の転写}
+
+\printBibForSubfiles
+\end{document}

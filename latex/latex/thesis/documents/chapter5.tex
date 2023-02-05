@@ -1,0 +1,21 @@
+% set home directory
+\providecommand{\homedir}{..} 
+% load the preamble of main.tex by subfiles
+\documentclass[\homedir/main.tex]{subfiles}
+% ##############################################################################
+\begin{document}
+% set chapter numbering to work correctly even when separate compilation using subfile
+\setcounter{chapter}{4}
+\chapter{実験}\label{chap:results}
+
+\section{はじめに}
+パッと見上手くいってそうだが、被験者アンケートが必要なことを述べる
+
+\section{実験内容}
+被験者アンケートの内容
+
+\section{実験結果}
+被験者アンケートの結果
+
+\printBibForSubfiles
+\end{document}
