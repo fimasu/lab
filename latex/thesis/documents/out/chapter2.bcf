@@ -95,7 +95,7 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>maxcitenames</bcf:key>
-      <bcf:value>3</bcf:value>
+      <bcf:value>1</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>maxsortnames</bcf:key>
@@ -115,7 +115,7 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>mincitenames</bcf:key>
-      <bcf:value>3</bcf:value>
+      <bcf:value>1</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>minsortnames</bcf:key>
@@ -325,7 +325,7 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>maxcitenames</bcf:key>
-      <bcf:value>3</bcf:value>
+      <bcf:value>1</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>maxsortnames</bcf:key>
@@ -345,7 +345,7 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>mincitenames</bcf:key>
-      <bcf:value>3</bcf:value>
+      <bcf:value>1</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>minsortnames</bcf:key>
@@ -2353,7 +2353,25 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">../reference.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1" intorder="1">typography2019</bcf:citekey>
+    <bcf:citekey order="1" intorder="1">Gatys_2016_CVPR</bcf:citekey>
+    <bcf:citekey order="2" intorder="1">Gatys_2016_CVPR</bcf:citekey>
+    <bcf:citekey order="3" intorder="1">10.1145/383259.383295</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">7874180</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">10.1007/978-3-319-46475-6_43</bcf:citekey>
+    <bcf:citekey order="5" intorder="2">10.5555/3172077.3172198</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">Yang_2017_CVPR</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">Yang_2017_CVPR</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">Yang_2017_CVPR</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">Yang2019Controllable</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">Yang2019Controllable</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">typography2019</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">typography2019</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">Yang2019TETGAN</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">Yang2019TETGAN</bcf:citekey>
+    <bcf:citekey order="15" intorder="1">icpram20</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">icpram20</bcf:citekey>
+    <bcf:citekey order="17" intorder="1">oai:irdb.nii.ac.jp:01211:0005350653</bcf:citekey>
+    <bcf:citekey order="18" intorder="1">oai:irdb.nii.ac.jp:01211:0005350653</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
@@ -2365,4 +2383,13 @@
     </bcf:sort>
   </bcf:sortingtemplate>
   <!-- DATALISTS -->
+  <bcf:datalist section="0"
+                name="none/global//global/global"
+                type="entry"
+                sortingtemplatename="none"
+                sortingnamekeytemplatename="global"
+                labelprefix=""
+                uniquenametemplatename="global"
+                labelalphanametemplatename="global">
+  </bcf:datalist>
 </bcf:controlfile>

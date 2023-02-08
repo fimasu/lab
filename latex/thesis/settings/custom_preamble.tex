@@ -27,7 +27,7 @@
 
 % for bibliography
 \usepackage[backend=biber,style=ieee]{biblatex}
-
+\ExecuteBibliographyOptions{mincitenames=1,maxcitenames=1}
 % for separate compilation
 \usepackage{subfiles}
 
@@ -58,10 +58,23 @@
 \usepackage{subcaption}
 \captionsetup{compatibility=false}
 
+% for algorithm
+\usepackage{algorithm,algpseudocode}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+
+\makeatletter
+\renewcommand{\ALG@name}{アルゴリズム}
+\makeatother
+
+% extend enumarate
+\usepackage{enumitem}
+
 % misc
 % \usepackage[hyphens]{url}
 % \usepackage{siunitx} %for SI unit
-% \usepackage{algorithm,algpseudocode}
+
+
 % \usepackage{minted} % pip install --user pygments %for code
 
 % in­tel­li­gent cross-ref­er­enc­ing
@@ -71,7 +84,7 @@
 % at head of line:   \Cref{<label>}, \Cref{<label1>,<label2>,...} 
 \usepackage[capitalise,noabbrev]{cleveref}
 % for japanese
-\crefformat{chapter}{#2#1{}章#3}
+\crefformat{chapter}{#2{第}#1{章}#3}
 \crefformat{section}{#2#1{}節#3}
 \crefformat{subsection}{#2#1{}節#3}
 \crefname{figure}{図}{図}

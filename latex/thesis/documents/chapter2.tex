@@ -4,16 +4,87 @@
 \documentclass[\homedir/main.tex]{subfiles}
 % ##############################################################################
 \begin{document}
-
+% set chapter numbering to work correctly even when separate compilation using subfile
 \setcounter{chapter}{1}
-\chapter{関連研究}\label{sec:relatedworks}
-\section{はじめに}
+% ##############################################################################
+\chapter{関連研究}\label{chap:related_works}
+本研究ではStyle Transferを用いてデザイン文字列を生成している．（\cref{chap:methods}で詳述する．）
+そこで本章では，まず\cref{sec:style_transfer}でStyle Transferについて述べる．
+次に，本研究の関連研究として
+\cref{sec:text_effects_transfer}でStyle Transferをデザイン文字に応用した研究を紹介し，
+\cref{sec:logo_style_transfer}でStyle Transferをロゴに応用した研究を紹介する．
+本章の最後に，\cref{sec:positioning}でこれらの先行研究を踏まえた本研究の位置づけについて述べる．
 
-\section{文字の効果や装飾のStyle Transfer}
-文字の効果や装飾をStyle Transferによって転写する研究がある
-\cite{typography2019}
+% ##############################################################################
+\section{Style Transfer}\label{sec:style_transfer}
+\subsection{Style Transferとは}
+Style Transferとは「対象の構造を決定づけるデータ」と
+「対象の見た目や雰囲気を決定づけるデータ」の二種類を上手く融合させ，
+新たなデータを生成する技術である．
+この二種類のStyle Transferへの入力データのうち，「対象の構造を決定づけるデータ」は「コンテンツ」と呼ばれ，
+「対象の見た目や雰囲気を決定づけるデータ」は「スタイル」と呼ばれる．
 
-\section{Style Transferとロゴ作成}
-Style Transferを用いてロゴ作成を行う研究がある
+例えば，Style Transferの主要なタスクの一つである画風変換では，
+「画像中の物体の輪郭や配置」が「コンテンツ」に相当し，
+「画像の色使いやタッチ」が「スタイル」に相当する．
 
+\subsection{Convolutional Neural Networkを用いた画風変換手法}
+\citeauthor{Gatys_2016_CVPR}\cite{Gatys_2016_CVPR}は，
+Convolutional Neural Networkを用いて画風変換を行う手法を提案した．
+当時，Image Analogies\cite{10.1145/383259.383295}のように，
+Neural Networkを用いない画風変換手法は既に存在していたが，
+画風変換にNeural Networkを用いるのは先駆的な試みであった．
+この手法の発表以後は，Neural Networkを用いない手法も研究されていた\cite{7874180}ものの，
+Neural Networkを用いた手法がより盛んに研究されるようになり
+\cite{10.1007/978-3-319-46475-6_43, 10.5555/3172077.3172198}，主流な手法となった．
+
+% ##############################################################################
+\section{Style Transferとデザイン文字}\label{sec:text_effects_transfer}
+\subsection{の手法}
+\citeauthor{Yang_2017_CVPR}\cite{Yang_2017_CVPR}は，
+デザイン文字におけるStyle Transferという問題を提起し，
+これを解決する手法としてパッチマッチングを応用した手法を提案した．
+
+デザイン文字のエフェクトと
+Style Transferをデザイン文字に応用した研究の中では重要な研究の一つである．
+なぜなら，\cite{Yang_2017_CVPR}の主要な結果の一つである，文字の
+文字の骨格部分，すなわち文字を構成する線の中心線の集まりは「スケルトン」
+Neural Networkを用いてはいないものの，
+後の研究に影響を与えた
+
+文字のスケルトンとの距離とエフェクトに対応関係があることを明らかにし，
+
+
+\subsection{テクスチャ画像をGANを用いる手法}
+\citeauthor{Yang2019Controllable}\cite{Yang2019Controllable}は，
+
+\subsection{SegmentationとGANを用いる手法}
+\citeauthor{typography2019}\cite{typography2019}は，
+
+\subsection{GANを用いる手法}
+\citeauthor{Yang2019TETGAN}\cite{Yang2019TETGAN}は，
+
+% ##############################################################################
+\section{Style Transferとロゴ}\label{sec:logo_style_transfer}
+\subsection{の手法}
+\citeauthor{icpram20}\cite{icpram20}は，
+
+\subsection{の手法}
+\citeauthor{oai:irdb.nii.ac.jp:01211:0005350653}\cite{oai:irdb.nii.ac.jp:01211:0005350653}は，
+
+% ##############################################################################
+\section{本研究の位置づけ}\label{sec:positioning}% TODO　一章との調整
+本章でここまで述べてきたように，「デザイン文字のStyle Transfer」に関する研究は多く存在する．
+しかし，「ロゴのStyle Transfer」に関する研究は少なく，
+ましてや「デザイン文字列のStyle Transfer」に関する研究は筆者の調査した限りでは見当たらなかった．
+
+そこで，本研究ではデザイン文字列の自動生成手法に関して研究を行う．
+
+また、デザイン文字列のもつ形状の歪みは
+Style Transferでは扱いづらい．
+そこで、回帰分析や射影変換組み合わせることで歪みのあるデザインからの歪みの推定・転写を可能にし、
+単なるStyle Transferでは扱えないものに対応することを目指す.
+
+% ##############################################################################
+\printBibForSubfiles
 \end{document}

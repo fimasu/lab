@@ -1,3 +1,6 @@
+% To detect and warn of obsolete commands
+\RequirePackage[l2tabu, orthodox]{nag}
+
 \RequirePackage{ifptex,ifxetex,ifluatex}
 \ifluatex
     \usepackage{bxcalcux}
@@ -24,8 +27,9 @@
 
 \usepackage[LGR,T2A,T1]{fontenc}
 
-% figure setting 
+% graphic setting (xcolor?)
 \usepackage[dvipdfmx]{graphicx, color}
+
 \usepackage{grffile}
 % paper layout setting
 \usepackage{setspace}
@@ -88,10 +92,6 @@
 \setcounter{tocdepth}{3}
 \setcounter{secnumdepth}{3}
 
-
-% \AtBeginDocument{%
-% }
-
 % Command             10pt    11pt    12pt
 % \tiny               5       6       6
 % \scriptsize         7       8       8
@@ -130,15 +130,18 @@
         %
     \fi\fi
 
+% for creating graphic elements
 \usepackage{tikz}
+
+% e-TeX tools
 \usepackage{etoolbox}
+
 \newcommand{\circled}[2][]{%
     \tikz[baseline=(char.base)]{%
         \node[shape = circle, draw, inner sep = 1pt]
         (char) {\phantom{\ifblank{#1}{#2}{#1}}};%
         \node at (char.center) {\makebox[0pt][c]{#2}};}}
 \robustify{\circled}
-
 
 \makeatletter
 %

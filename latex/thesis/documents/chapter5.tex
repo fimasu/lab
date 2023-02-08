@@ -4,17 +4,24 @@
 \documentclass[\homedir/main.tex]{subfiles}
 % ##############################################################################
 \begin{document}
-
+% set chapter numbering to work correctly even when separate compilation using subfile
 \setcounter{chapter}{4}
-\chapter{実験}\label{sec:results}
+\chapter{評価実験}\label{chap:experiment}
+本研究では，\cref{chap:methods}で述べた手法を評価するためにユーザアンケートを行った．
+そこで，本章ではまず\cref{sec:experimental_details}でアンケート内容について述べる．
+次に，\cref{sec:experimental_results}で得られたアンケート結果について述べる．
 
-\section{はじめに}
-パッと見上手くいってそうだが、被験者アンケートが必要なことを述べる
 
-\section{実験内容}
+% ##############################################################################
+\section{実験内容}\label{sec:experimental_details}
 被験者アンケートの内容
 
-\section{実験結果}
+
+% ##############################################################################
+\section{実験結果}\label{sec:experimental_results}
 被験者アンケートの結果
 
+
+% ##############################################################################
+\printBibForSubfiles
 \end{document}
