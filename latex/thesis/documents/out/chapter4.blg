@@ -1,10 +1,18 @@
 [0] Config.pm:306> INFO - This is Biber 2.18
 [0] Config.pm:309> INFO - Logfile is 'out/chapter4.blg'
-[114] biber-MSWIN32:340> INFO - === 
-[151] Biber.pm:418> INFO - Reading 'out/chapter4.bcf'
-[272] Biber.pm:978> INFO - Found 0 citekeys in bib section 0
-[288] bbl.pm:654> INFO - Writing 'out/chapter4.bbl' with encoding 'UTF-8'
-[288] bbl.pm:655> INFO - Converting UTF-8 to TeX macros on output to .bbl
-[288] bbl.pm:757> INFO - Output to out/chapter4.bbl
-[288] Biber.pm:130> WARN - The file 'out/chapter4.bcf' does not contain any citations!
-[288] Biber.pm:132> INFO - WARNINGS: 1
+[113] biber-MSWIN32:340> INFO - === 
+[150] Biber.pm:418> INFO - Reading 'out/chapter4.bcf'
+[272] Biber.pm:978> INFO - Found 1 citekeys in bib section 0
+[288] Biber.pm:4401> INFO - Processing section 0
+[301] Biber.pm:4592> INFO - Looking for bibtex file '../reference.bib' for section 0
+[352] bibtex.pm:1713> INFO - LaTeX decoding ...
+[370] bibtex.pm:1518> INFO - Found BibTeX data source '../reference.bib'
+[408] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[408] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[408] Biber.pm:4221> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[408] Biber.pm:4227> INFO - No sort tailoring available for locale 'en-US'
+[411] bbl.pm:654> INFO - Writing 'out/chapter4.bbl' with encoding 'UTF-8'
+[411] bbl.pm:655> INFO - Converting UTF-8 to TeX macros on output to .bbl
+[412] bbl.pm:757> INFO - Output to out/chapter4.bbl
+[413] Biber.pm:130> WARN - legacy month field 'June' in entry 'typography2019' is not an integer - this will probably not sort properly.
+[413] Biber.pm:132> INFO - WARNINGS: 1

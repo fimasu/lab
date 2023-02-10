@@ -1,0 +1,10 @@
+[0] Config.pm:306> INFO - This is Biber 2.18
+[0] Config.pm:309> INFO - Logfile is 'out/chapter6.blg'
+[117] biber-MSWIN32:340> INFO - === 
+[155] Biber.pm:418> INFO - Reading 'out/chapter6.bcf'
+[287] Biber.pm:978> INFO - Found 0 citekeys in bib section 0
+[303] bbl.pm:654> INFO - Writing 'out/chapter6.bbl' with encoding 'UTF-8'
+[303] bbl.pm:655> INFO - Converting UTF-8 to TeX macros on output to .bbl
+[303] bbl.pm:757> INFO - Output to out/chapter6.bbl
+[304] Biber.pm:130> WARN - The file 'out/chapter6.bcf' does not contain any citations!
+[304] Biber.pm:132> INFO - WARNINGS: 1

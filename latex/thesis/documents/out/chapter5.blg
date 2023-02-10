@@ -1,0 +1,18 @@
+[0] Config.pm:306> INFO - This is Biber 2.18
+[0] Config.pm:309> INFO - Logfile is 'out/chapter5.blg'
+[115] biber-MSWIN32:340> INFO - === 
+[156] Biber.pm:418> INFO - Reading 'out/chapter5.bcf'
+[285] Biber.pm:978> INFO - Found 2 citekeys in bib section 0
+[302] Biber.pm:4401> INFO - Processing section 0
+[315] Biber.pm:4592> INFO - Looking for bibtex file '../reference.bib' for section 0
+[367] bibtex.pm:1713> INFO - LaTeX decoding ...
+[399] bibtex.pm:1518> INFO - Found BibTeX data source '../reference.bib'
+[444] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[444] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[451] Biber.pm:4221> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[451] Biber.pm:4227> INFO - No sort tailoring available for locale 'en-US'
+[455] bbl.pm:654> INFO - Writing 'out/chapter5.bbl' with encoding 'UTF-8'
+[455] bbl.pm:655> INFO - Converting UTF-8 to TeX macros on output to .bbl
+[457] bbl.pm:757> INFO - Output to out/chapter5.bbl
+[457] Biber.pm:130> WARN - legacy month field 'June' in entry 'typography2019' is not an integer - this will probably not sort properly.
+[457] Biber.pm:132> INFO - WARNINGS: 1

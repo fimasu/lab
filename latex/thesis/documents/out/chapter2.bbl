@@ -1,0 +1,503 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\preamble{%
+\providecommand*\hyphen{-}%
+}
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{Gatys_2016_CVPR}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=b463321fbc7e07dca928b179ef786d43}{%
+           family={Gatys},
+           familyi={G\bibinitperiod},
+           given={Leon\bibnamedelima A.},
+           giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=76032390b4e0ce051a46193f6091dc26}{%
+           family={Ecker},
+           familyi={E\bibinitperiod},
+           given={Alexander\bibnamedelima S.},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=653ad8c2337d9615a186b743cc8d69a5}{%
+           family={Bethge},
+           familyi={B\bibinitperiod},
+           given={Matthias},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{559fb41a0264361a79f96b4b4820c5d0}
+      \strng{fullhash}{467d36c2c62b4f85d9a0e313c593bf43}
+      \strng{bibnamehash}{467d36c2c62b4f85d9a0e313c593bf43}
+      \strng{authorbibnamehash}{467d36c2c62b4f85d9a0e313c593bf43}
+      \strng{authornamehash}{559fb41a0264361a79f96b4b4820c5d0}
+      \strng{authorfullhash}{467d36c2c62b4f85d9a0e313c593bf43}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}
+      \field{month}{6}
+      \field{title}{Image Style Transfer Using Convolutional Neural Networks}
+      \field{year}{2016}
+    \endentry
+    \entry{10.1145/383259.383295}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=3ae15403d73bb9a613bdf9c281d73496}{%
+           family={Hertzmann},
+           familyi={H\bibinitperiod},
+           given={Aaron},
+           giveni={A\bibinitperiod}}}%
+        {{hash=2b5391b614f1c524ba9c61d72a7fbbed}{%
+           family={Jacobs},
+           familyi={J\bibinitperiod},
+           given={Charles\bibnamedelima E.},
+           giveni={C\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=6befa50d1bad159fffc14e56262c94b2}{%
+           family={Oliver},
+           familyi={O\bibinitperiod},
+           given={Nuria},
+           giveni={N\bibinitperiod}}}%
+        {{hash=7133c602cdd8e7ab92c7a3430532a3db}{%
+           family={Curless},
+           familyi={C\bibinitperiod},
+           given={Brian},
+           giveni={B\bibinitperiod}}}%
+        {{hash=fb04afa5b83da95867e8bbb9801f531b}{%
+           family={Salesin},
+           familyi={S\bibinitperiod},
+           given={David\bibnamedelima H.},
+           giveni={D\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, NY, USA}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{ee0241a95fd87d9c0b716c1ec2553a63}
+      \strng{fullhash}{2b7ef79ee3d9b814a92353c287beed9b}
+      \strng{bibnamehash}{2b7ef79ee3d9b814a92353c287beed9b}
+      \strng{authorbibnamehash}{2b7ef79ee3d9b814a92353c287beed9b}
+      \strng{authornamehash}{ee0241a95fd87d9c0b716c1ec2553a63}
+      \strng{authorfullhash}{2b7ef79ee3d9b814a92353c287beed9b}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper describes a new framework for processing images by example, called \textquotedblleft{}image analogies.\textquotedblright{} The framework involves two stages: a design phase, in which a pair of images, with one image purported to be a \textquotedblleft{}filtered\textquotedblright{} version of the other, is presented as \textquotedblleft{}training data\textquotedblright{}; and an application phase, in which the learned filter is applied to some new target image in order to create an \textquotedblleft{}analogous\textquotedblright{} filtered result. Image analogies are based on a simple multi-scale autoregression, inspired primarily by recent results in texture synthesis. By choosing different types of source image pairs as input, the framework supports a wide variety of \textquotedblleft{}image filter\textquotedblright{} effects, including traditional image filters, such as blurring or embossing; improved texture synthesis, in which some textures are synthesized with higher quality than by previous approaches; super-resolution, in which a higher-resolution image is inferred from a low-resolution source; texture transfer, in which images are \textquotedblleft{}texturized\textquotedblright{} with some arbitrary source texture; artistic filters, in which various drawing and painting styles are synthesized based on scanned real-world examples; and texture-by-numbers, in which realistic scenes, composed of a variety of textures, are created using a simple painting interface.}
+      \field{booktitle}{Proceedings of the 28th Annual Conference on Computer Graphics and Interactive Techniques}
+      \field{isbn}{158113374X}
+      \field{series}{SIGGRAPH '01}
+      \field{title}{Image Analogies}
+      \field{year}{2001}
+      \field{pages}{327\bibrangedash 340}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1145/383259.383295
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/383259.383295
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/383259.383295
+      \endverb
+      \keyw{texture-by-numbers,texture transfer,non-photorealistic rendering,autoregression,texture synthesis,Markov random fields,example-based rendering}
+    \endentry
+    \entry{7874180}{article}{}
+      \name{author}{2}{}{%
+        {{hash=20b8206f111f40a7edb0499bc22b9375}{%
+           family={Elad},
+           familyi={E\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d79279b9266195f14507834f9a9b1fff}{%
+           family={Milanfar},
+           familyi={M\bibinitperiod},
+           given={Peyman},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{3e2c9c555b3538289c28aa5af2602f4a}
+      \strng{fullhash}{92de904b957d1dc9fe0f9321aefde647}
+      \strng{bibnamehash}{92de904b957d1dc9fe0f9321aefde647}
+      \strng{authorbibnamehash}{92de904b957d1dc9fe0f9321aefde647}
+      \strng{authornamehash}{3e2c9c555b3538289c28aa5af2602f4a}
+      \strng{authorfullhash}{92de904b957d1dc9fe0f9321aefde647}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Image Processing}
+      \field{number}{5}
+      \field{title}{Style Transfer Via Texture Synthesis}
+      \field{volume}{26}
+      \field{year}{2017}
+      \field{pages}{2338\bibrangedash 2351}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1109/TIP.2017.2678168
+      \endverb
+    \endentry
+    \entry{10.1007/978-3-319-46475-6_43}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=90edc587e1d523d4e173b1fe6e733445}{%
+           family={Johnson},
+           familyi={J\bibinitperiod},
+           given={Justin},
+           giveni={J\bibinitperiod}}}%
+        {{hash=a8f4774fb7f40d7bca42099c3ffcc3f8}{%
+           family={Alahi},
+           familyi={A\bibinitperiod},
+           given={Alexandre},
+           giveni={A\bibinitperiod}}}%
+        {{hash=cd00ce5bc45f687c432e52e0fa1a7aa6}{%
+           family={Fei-Fei},
+           familyi={F\bibinithyphendelim F\bibinitperiod},
+           given={Li},
+           giveni={L\bibinitperiod}}}%
+      }
+      \name{editor}{4}{}{%
+        {{hash=89e3f1ee83923a2c7a44b7597b35fccd}{%
+           family={Leibe},
+           familyi={L\bibinitperiod},
+           given={Bastian},
+           giveni={B\bibinitperiod}}}%
+        {{hash=7df17ebc3cfb4cf295bff60b579d5638}{%
+           family={Matas},
+           familyi={M\bibinitperiod},
+           given={Jiri},
+           giveni={J\bibinitperiod}}}%
+        {{hash=da5596827b4ee2721d6b0cc1010c9fa4}{%
+           family={Sebe},
+           familyi={S\bibinitperiod},
+           given={Nicu},
+           giveni={N\bibinitperiod}}}%
+        {{hash=53d2880ad8047b61cdae2c6b2803e763}{%
+           family={Welling},
+           familyi={W\bibinitperiod},
+           given={Max},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cham}%
+      }
+      \list{publisher}{1}{%
+        {Springer International Publishing}%
+      }
+      \strng{namehash}{703afbca586b4470d0f3fab18063c292}
+      \strng{fullhash}{94367b137ee9669deef5e991ea564050}
+      \strng{bibnamehash}{94367b137ee9669deef5e991ea564050}
+      \strng{authorbibnamehash}{94367b137ee9669deef5e991ea564050}
+      \strng{authornamehash}{703afbca586b4470d0f3fab18063c292}
+      \strng{authorfullhash}{94367b137ee9669deef5e991ea564050}
+      \strng{editorbibnamehash}{5d022b1b57b06bafadc79950b7fdba9b}
+      \strng{editornamehash}{fe75fea4df059cd110c5212ee61f2454}
+      \strng{editorfullhash}{5d022b1b57b06bafadc79950b7fdba9b}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We consider image transformation problems, where an input image is transformed into an output image. Recent methods for such problems typically train feed-forward convolutional neural networks using a per-pixel loss between the output and ground-truth images. Parallel work has shown that high-quality images can be generated by defining and optimizing perceptual loss functions based on high-level features extracted from pretrained networks. We combine the benefits of both approaches, and propose the use of perceptual loss functions for training feed-forward networks for image transformation tasks. We show results on image style transfer, where a feed-forward network is trained to solve the optimization problem proposed by Gatys et al. in real-time. Compared to the optimization-based method, our network gives similar qualitative results but is three orders of magnitude faster. We also experiment with single-image super-resolution, where replacing a per-pixel loss with a perceptual loss gives visually pleasing results.}
+      \field{booktitle}{Computer Vision -- ECCV 2016}
+      \field{isbn}{978-3-319-46475-6}
+      \field{title}{Perceptual Losses for Real-Time Style Transfer and Super-Resolution}
+      \field{year}{2016}
+      \field{pages}{694\bibrangedash 711}
+      \range{pages}{18}
+    \endentry
+    \entry{10.5555/3172077.3172198}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=46e2e0b282bd98dcc736b344f4c7274f}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Yanghao},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=7b94afca49a5fad9a08434bbb6abf1ce}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Naiyan},
+           giveni={N\bibinitperiod}}}%
+        {{hash=e97cb99f7ec95531e680d1c399e23717}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Jiaying},
+           giveni={J\bibinitperiod}}}%
+        {{hash=53abe6191e5ecbc0680962581cbd5090}{%
+           family={Hou},
+           familyi={H\bibinitperiod},
+           given={Xiaodi},
+           giveni={X\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Melbourne, Australia}%
+      }
+      \list{publisher}{1}{%
+        {AAAI Press}%
+      }
+      \strng{namehash}{102777818c0601d4c9ae52f6e4fb2a9a}
+      \strng{fullhash}{d5fa77772a51e68c6b6f2b7588f5f55d}
+      \strng{bibnamehash}{d5fa77772a51e68c6b6f2b7588f5f55d}
+      \strng{authorbibnamehash}{d5fa77772a51e68c6b6f2b7588f5f55d}
+      \strng{authornamehash}{102777818c0601d4c9ae52f6e4fb2a9a}
+      \strng{authorfullhash}{d5fa77772a51e68c6b6f2b7588f5f55d}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Neural Style Transfer [Gatys et al. , 2016] has recently demonstrated very exciting results which catches eyes in both academia and industry. Despite the amazing results, the principle of neural style transfer, especially why the Gram matrices could represent style remains unclear. In this paper, we propose a novel interpretation of neural style transfer by treating it as a domain adaptation problem. Specifically, we theoretically show that matching the Gram matrices of feature maps is equivalent to minimize the Maximum Mean Discrepancy (MMD) with the second order polynomial kernel. Thus, we argue that the essence of neural style transfer is to match the feature distributions between the style images and the generated images. To further support our standpoint, we experiment with several other distribution alignment methods, and achieve appealing results. We believe this novel interpretation connects these two important research fields, and could enlighten future researches.}
+      \field{booktitle}{Proceedings of the 26th International Joint Conference on Artificial Intelligence}
+      \field{isbn}{9780999241103}
+      \field{series}{IJCAI'17}
+      \field{title}{Demystifying Neural Style Transfer}
+      \field{year}{2017}
+      \field{pages}{2230\bibrangedash 2236}
+      \range{pages}{7}
+    \endentry
+    \entry{Yang_2017_CVPR}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=a8cab462a0a4a31bc152995dba309a5d}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Shuai},
+           giveni={S\bibinitperiod}}}%
+        {{hash=e97cb99f7ec95531e680d1c399e23717}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Jiaying},
+           giveni={J\bibinitperiod}}}%
+        {{hash=7863575997cb36d24a3430352a60c580}{%
+           family={Lian},
+           familyi={L\bibinitperiod},
+           given={Zhouhui},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=8ae7e65e05955e78f45f85b82b3bd270}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Zongming},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{8bccf0a4b67246dd0bb2233a70680657}
+      \strng{fullhash}{739906550c479fd5cd0cfffe9e49269a}
+      \strng{bibnamehash}{739906550c479fd5cd0cfffe9e49269a}
+      \strng{authorbibnamehash}{739906550c479fd5cd0cfffe9e49269a}
+      \strng{authornamehash}{8bccf0a4b67246dd0bb2233a70680657}
+      \strng{authorfullhash}{739906550c479fd5cd0cfffe9e49269a}
+      \field{extraname}{1}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}
+      \field{month}{7}
+      \field{title}{Awesome Typography: Statistics-Based Text Effects Transfer}
+      \field{year}{2017}
+    \endentry
+    \entry{Yang2019Controllable}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=a8cab462a0a4a31bc152995dba309a5d}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Shuai},
+           giveni={S\bibinitperiod}}}%
+        {{hash=4f87ba962b43f4d664922e1f3c38c9c0}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Zhangyang},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=9a64d1e29f2942e713f5b56bd8317df7}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Zhaowen},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=7d37b8eddbfa29411e3973fce2cd7773}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Ning},
+           giveni={N\bibinitperiod}}}%
+        {{hash=e97cb99f7ec95531e680d1c399e23717}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Jiaying},
+           giveni={J\bibinitperiod}}}%
+        {{hash=8ae7e65e05955e78f45f85b82b3bd270}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Zongming},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{8bccf0a4b67246dd0bb2233a70680657}
+      \strng{fullhash}{61bc3fdb53fde28cf1b0d97b4b9cab43}
+      \strng{bibnamehash}{61bc3fdb53fde28cf1b0d97b4b9cab43}
+      \strng{authorbibnamehash}{61bc3fdb53fde28cf1b0d97b4b9cab43}
+      \strng{authornamehash}{8bccf0a4b67246dd0bb2233a70680657}
+      \strng{authorfullhash}{61bc3fdb53fde28cf1b0d97b4b9cab43}
+      \field{extraname}{2}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{International Conference on Computer Vision}
+      \field{title}{Controllable Artistic Text Style Transfer via Shape-Matching GAN}
+      \field{year}{2019}
+    \endentry
+    \entry{typography2019}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=4e059e4116c62a64406812830b8c1f99}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Wenjing},
+           giveni={W\bibinitperiod}}}%
+        {{hash=e97cb99f7ec95531e680d1c399e23717}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Jiaying},
+           giveni={J\bibinitperiod}}}%
+        {{hash=a8cab462a0a4a31bc152995dba309a5d}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Shuai},
+           giveni={S\bibinitperiod}}}%
+        {{hash=8ae7e65e05955e78f45f85b82b3bd270}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Zongming},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{70f2dfa15d5bafebc2ccad85a7488f76}
+      \strng{fullhash}{ccc87a668b472fbb355a2549d155253b}
+      \strng{bibnamehash}{ccc87a668b472fbb355a2549d155253b}
+      \strng{authorbibnamehash}{ccc87a668b472fbb355a2549d155253b}
+      \strng{authornamehash}{70f2dfa15d5bafebc2ccad85a7488f76}
+      \strng{authorfullhash}{ccc87a668b472fbb355a2549d155253b}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}
+      \field{month}{6}
+      \field{title}{Typography with Decor: Intelligent Text Style Transfer}
+      \field{year}{2019}
+    \endentry
+    \entry{Yang2019TETGAN}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=a8cab462a0a4a31bc152995dba309a5d}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Shuai},
+           giveni={S\bibinitperiod}}}%
+        {{hash=e97cb99f7ec95531e680d1c399e23717}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Jiaying},
+           giveni={J\bibinitperiod}}}%
+        {{hash=4e059e4116c62a64406812830b8c1f99}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Wenjing},
+           giveni={W\bibinitperiod}}}%
+        {{hash=8ae7e65e05955e78f45f85b82b3bd270}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Zongming},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{8bccf0a4b67246dd0bb2233a70680657}
+      \strng{fullhash}{d2f5d54b4fda7f227fa2b309eea787ed}
+      \strng{bibnamehash}{d2f5d54b4fda7f227fa2b309eea787ed}
+      \strng{authorbibnamehash}{d2f5d54b4fda7f227fa2b309eea787ed}
+      \strng{authornamehash}{8bccf0a4b67246dd0bb2233a70680657}
+      \strng{authorfullhash}{d2f5d54b4fda7f227fa2b309eea787ed}
+      \field{extraname}{3}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{AAAI Conference on Artificial Intelligence}
+      \field{title}{TET-GAN: Text Effects Transfer via Stylization and Destylization}
+      \field{year}{2019}
+    \endentry
+    \entry{icpram20}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=a09e035ae45acc29f667c1107a02a52a}{%
+           family={Ter{-}Sarkisov.},
+           familyi={T\bibinitperiod},
+           given={Aram},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {INSTICC}%
+      }
+      \list{publisher}{1}{%
+        {SciTePress}%
+      }
+      \strng{namehash}{a09e035ae45acc29f667c1107a02a52a}
+      \strng{fullhash}{a09e035ae45acc29f667c1107a02a52a}
+      \strng{bibnamehash}{a09e035ae45acc29f667c1107a02a52a}
+      \strng{authorbibnamehash}{a09e035ae45acc29f667c1107a02a52a}
+      \strng{authornamehash}{a09e035ae45acc29f667c1107a02a52a}
+      \strng{authorfullhash}{a09e035ae45acc29f667c1107a02a52a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 9th International Conference on Pattern Recognition Applications and Methods - ICPRAM,}
+      \field{isbn}{978-989-758-397-1}
+      \field{issn}{2184-4313}
+      \field{title}{Network of Steel: Neural Font Style Transfer from Heavy Metal to Corporate Logos}
+      \field{year}{2020}
+      \field{pages}{621\bibrangedash 629}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.5220/0009343906210629
+      \endverb
+    \endentry
+    \entry{oai:irdb.nii.ac.jp:01211:0005350653}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=45cf15f5bc2064443a9c6b42bac8352c}{%
+           family={アタルサイハン},
+           familyi={ア\bibinitperiod},
+           given={ガントゥグス},
+           giveni={ガ\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {九州大学}%
+      }
+      \strng{namehash}{45cf15f5bc2064443a9c6b42bac8352c}
+      \strng{fullhash}{45cf15f5bc2064443a9c6b42bac8352c}
+      \strng{bibnamehash}{45cf15f5bc2064443a9c6b42bac8352c}
+      \strng{authorbibnamehash}{45cf15f5bc2064443a9c6b42bac8352c}
+      \strng{authornamehash}{45cf15f5bc2064443a9c6b42bac8352c}
+      \strng{authorfullhash}{45cf15f5bc2064443a9c6b42bac8352c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Typographic Design Generation Using Neural Style Transfer}
+      \field{type}{phdthesis}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://irdb.nii.ac.jp/01211/0005350653
+      \endverb
+      \verb{url}
+      \verb https://irdb.nii.ac.jp/01211/0005350653
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
