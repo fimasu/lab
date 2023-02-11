@@ -32,7 +32,14 @@
 \usepackage{subfiles}
 
 % set paths using \homedir for separate compilation
-\graphicspath{{\homedir/figures/}}
+\graphicspath{
+    {\homedir/figures/},
+    {\homedir/figures/chapter1/},
+    {\homedir/figures/chapter2/},
+    {\homedir/figures/chapter3/},
+    {\homedir/figures/chapter4/},
+    {\homedir/figures/chapter5/},
+}
 \addbibresource{\homedir/reference.bib}
 
 
@@ -60,12 +67,17 @@
 
 % for algorithm
 \usepackage{algorithm,algpseudocode}
+
 \renewcommand{\algorithmicrequire}{\textbf{Input:}}
 \renewcommand{\algorithmicensure}{\textbf{Output:}}
+\algnewcommand{\algorithmicand}{\textbf{ and }}
+\algnewcommand{\algorithmicor}{\textbf{ or }}
 
-\makeatletter
-\renewcommand{\ALG@name}{アルゴリズム}
-\makeatother
+\algnewcommand{\OR}{\algorithmicor}
+\algnewcommand{\AND}{\algorithmicand}
+\algnewcommand{\Countinue}{\textbf{countinue}}
+\algnewcommand{\Break}{\textbf{break}}
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
 
 % extend enumarate
 \usepackage{enumitem}
