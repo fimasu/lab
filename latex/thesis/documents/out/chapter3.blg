@@ -1,0 +1,18 @@
+[0] Config.pm:306> INFO - This is Biber 2.18
+[0] Config.pm:309> INFO - Logfile is 'out/chapter3.blg'
+[114] biber-MSWIN32:340> INFO - === 
+[159] Biber.pm:418> INFO - Reading 'out/chapter3.bcf'
+[280] Biber.pm:978> INFO - Found 4 citekeys in bib section 0
+[296] Biber.pm:4401> INFO - Processing section 0
+[309] Biber.pm:4592> INFO - Looking for bibtex file '../reference.bib' for section 0
+[355] bibtex.pm:1713> INFO - LaTeX decoding ...
+[379] bibtex.pm:1518> INFO - Found BibTeX data source '../reference.bib'
+[452] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[452] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[452] Biber.pm:4221> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[452] Biber.pm:4227> INFO - No sort tailoring available for locale 'en-US'
+[458] bbl.pm:654> INFO - Writing 'out/chapter3.bbl' with encoding 'UTF-8'
+[458] bbl.pm:655> INFO - Converting UTF-8 to TeX macros on output to .bbl
+[466] bbl.pm:757> INFO - Output to out/chapter3.bbl
+[467] Biber.pm:130> WARN - legacy month field '06--11 Aug' in entry 'pmlr-v70-arjovsky17a' is not an integer - this will probably not sort properly.
+[467] Biber.pm:132> INFO - WARNINGS: 1

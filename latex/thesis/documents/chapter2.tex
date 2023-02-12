@@ -28,19 +28,19 @@ Style Transferとは「対象の構造を決定づけるデータ」と
 「画像中の物体の輪郭や配置」が「コンテンツ」に相当し，
 「画像の色使いやタッチ」が「スタイル」に相当する．
 
-\subsection{Convolutional Neural Networkを用いた画風変換手法}
-Gatysら\cite{Gatys_2016_CVPR}は，
-Convolutional Neural Networkを用いて画風変換を行う手法を提案した．
-当時，Image Analogies\cite{10.1145/383259.383295}のように，
-Neural Networkを用いない画風変換手法は既に存在していたが，
-画風変換にNeural Networkを用いるのは先駆的な試みであった．
-この手法の発表以後は，Neural Networkを用いない手法も研究されていた\cite{7874180}ものの，
-Neural Networkを用いた手法がより盛んに研究されるようになり
-\cite{10.1007/978-3-319-46475-6_43, 10.5555/3172077.3172198}，主流な手法となった．
+\subsection{畳み込みニューラルネットワークを用いた画風変換手法}
+Gatysら\cite{Gatys_2016_CVPR}は
+畳み込みニューラルネットワークを用いて画風変換を行う手法を提案した．
+当時，Image Analogies\cite{Hertzmann_2001}のように
+ニューラルネットワークを用いない画風変換手法は既に存在していたが，
+画風変換にニューラルネットワークを用いるのは先駆的な試みであった．
+この手法の発表以後もニューラルネットワークを用いない手法\cite{Elad_2017}が
+研究されなくなったというわけではないものの，
+ニューラルネットワークを用いる手法\cite{Johnson_2016, Li_2017}が主流となった．
 
 % ##############################################################################
 \section{Style Transferとデザイン文字}\label{sec:text_effects_transfer}
-\subsection{パッチマッチングを応用した手法}%TODO
+
 Yangら\cite{Yang_2017_CVPR}は，
 デザイン文字におけるStyle Transferという問題を提起し，
 これを解決する手法としてパッチマッチングを応用した手法を提案した．
@@ -52,13 +52,11 @@ Style Transferをデザイン文字に応用した研究の中では重要な研
 との距離とエフェクトに対応関係があることを明らかにし後の研究に影響を与えたためである．
 
 
-\subsection{テクスチャ画像とGANを用いる手法}%TODO
-Yangら\cite{Yang2019Controllable}は，
-
-\subsection{SegmentationとGANを用いる手法}%TODO
 Wangら\cite{typography2019}は，
 
-\subsection{GANを用いる手法}%TODO
+
+Yangら\cite{Yang2019Controllable}は，
+
 Yangら\cite{Yang2019TETGAN}は，
 
 % ##############################################################################
@@ -67,7 +65,7 @@ Yangら\cite{Yang2019TETGAN}は，
 Ter-Sarkisov.\cite{icpram20}は，
 
 \subsection{Style Transferを用いてロゴを自動で作成する手法の研究}%TODO
-\citeauthor{oai:irdb.nii.ac.jp:01211:0005350653}\cite{oai:irdb.nii.ac.jp:01211:0005350653}は，
+アタルサイハン\cite{Atarsaikhan}は，
 
 % ##############################################################################
 \section{本研究の位置づけ}\label{sec:positioning}
