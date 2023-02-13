@@ -1,16 +1,63 @@
 @preamble{{\providecommand*\hyphen{-}}}
 
 @comment{
+  前提知識となる理論
+}
+
+@book{fujita2017,
+  author    = {藤田毅},
+  yomi      = {Takeshi Fujita},
+  title     = {C++で学ぶディープラーニング},
+  publisher = {エキサイト株式会社},
+  year      = {2017}
+}
+
+@inproceedings{NIPS2014_5ca3e9b1,
+  author    = {Goodfellow, Ian and Pouget-Abadie, Jean and Mirza, Mehdi and Xu, Bing and Warde-Farley, David and Ozair, Sherjil and Courville, Aaron and Bengio, Yoshua},
+  booktitle = {Advances in Neural Information Processing Systems},
+  editor    = {Z. Ghahramani and M. Welling and C. Cortes and N. Lawrence and K.Q. Weinberger},
+  pages     = {},
+  publisher = {Curran Associates, Inc.},
+  title     = {Generative Adversarial Nets},
+  volume    = {27},
+  year      = {2014}
+}
+
+@inproceedings{pmlr-v70-arjovsky17a,
+  title     = {{W}asserstein Generative Adversarial Networks},
+  author    = {Martin Arjovsky and Soumith Chintala and L{\'e}on Bottou},
+  booktitle = {Proceedings of the 34th International Conference on Machine Learning},
+  pages     = {214--223},
+  year      = {2017},
+  editor    = {Precup, Doina and Teh, Yee Whye},
+  volume    = {70},
+  series    = {Proceedings of Machine Learning Research},
+  month     = {06--11 Aug},
+  publisher = {PMLR},
+  abstract  = {We introduce a new algorithm named WGAN, an alternative to traditional GAN training. In this new model, we show that we can improve the stability of learning, get rid of problems like mode collapse, and provide meaningful learning curves useful for debugging and hyperparameter searches. Furthermore, we show that the corresponding optimization problem is sound, and provide extensive theoretical work highlighting the deep connections to different distances between distributions.}
+}
+
+@inproceedings{NIPS2017_892c3b1c,
+  author    = {Gulrajani, Ishaan and Ahmed, Faruk and Arjovsky, Martin and Dumoulin, Vincent and Courville, Aaron C},
+  booktitle = {Advances in Neural Information Processing Systems},
+  editor    = {I. Guyon and U. Von Luxburg and S. Bengio and H. Wallach and R. Fergus and S. Vishwanathan and R. Garnett},
+  pages     = {},
+  publisher = {Curran Associates, Inc.},
+  title     = {Improved Training of Wasserstein GANs},
+  volume    = {30},
+  year      = {2017}
+}
+
+@comment{
   Style Transferに関する研究
 }
-@inproceedings{10.1145/383259.383295,
+@inproceedings{Hertzmann_2001,
   author    = {Hertzmann, Aaron and Jacobs, Charles E. and Oliver, Nuria and Curless, Brian and Salesin, David H.},
   title     = {Image Analogies},
   year      = {2001},
   isbn      = {158113374X},
   publisher = {Association for Computing Machinery},
   address   = {New York, NY, USA},
-  url       = {https://doi.org/10.1145/383259.383295},
   doi       = {10.1145/383259.383295},
   abstract  = {This paper describes a new framework for processing images by example, called “image analogies.” The framework involves two stages: a design phase, in which a pair of images, with one image purported to be a “filtered” version of the other, is presented as “training data”; and an application phase, in which the learned filter is applied to some new target image in order to create an “analogous” filtered result. Image analogies are based on a simple multi-scale autoregression, inspired primarily by recent results in texture synthesis. By choosing different types of source image pairs as input, the framework supports a wide variety of “image filter” effects, including traditional image filters, such as blurring or embossing; improved texture synthesis, in which some textures are synthesized with higher quality than by previous approaches; super-resolution, in which a higher-resolution image is inferred from a low-resolution source; texture transfer, in which images are “texturized” with some arbitrary source texture; artistic filters, in which various drawing and painting styles are synthesized based on scanned real-world examples; and texture-by-numbers, in which realistic scenes, composed of a variety of textures, are created using a simple painting interface.},
   booktitle = {Proceedings of the 28th Annual Conference on Computer Graphics and Interactive Techniques},
@@ -20,7 +67,7 @@
   series    = {SIGGRAPH '01}
 }
 
-@article{7874180,
+@article{Elad_2017,
   author  = {Elad, Michael and Milanfar, Peyman},
   journal = {IEEE Transactions on Image Processing},
   title   = {Style Transfer Via Texture Synthesis},
@@ -39,7 +86,7 @@
   year      = {2016}
 }
 
-@inproceedings{10.1007/978-3-319-46475-6_43,
+@inproceedings{Johnson_2016,
   author    = {Johnson, Justin
                and Alahi, Alexandre
                and Fei-Fei, Li},
@@ -57,7 +104,7 @@
   isbn      = {978-3-319-46475-6}
 }
 
-@inproceedings{10.5555/3172077.3172198,
+@inproceedings{Li_2017,
   author    = {Li, Yanghao and Wang, Naiyan and Liu, Jiaying and Hou, Xiaodi},
   title     = {Demystifying Neural Style Transfer},
   year      = {2017},
@@ -91,6 +138,13 @@
   year      = {2019}
 }
 
+@inproceedings{Yang2019TETGAN,
+  title     = {TET-GAN: Text Effects Transfer via Stylization and Destylization},
+  author    = {Yang, Shuai and Liu, Jiaying and Wang, Wenjing and Guo, Zongming},
+  booktitle = {AAAI Conference on Artificial Intelligence},
+  year      = {2019}
+}
+
 @inproceedings{typography2019,
   author    = {Wang, Wenjing and Liu, Jiaying and Yang, Shuai and Guo, Zongming},
   title     = {Typography with Decor: Intelligent Text Style Transfer},
@@ -99,12 +153,7 @@
   year      = {2019}
 }
 
-@inproceedings{Yang2019TETGAN,
-  title     = {TET-GAN: Text Effects Transfer via Stylization and Destylization},
-  author    = {Yang, Shuai and Liu, Jiaying and Wang, Wenjing and Guo, Zongming},
-  booktitle = {AAAI Conference on Artificial Intelligence},
-  year      = {2019}
-}
+
 
 @comment{
   Style Transferをロゴに応用した研究
@@ -123,10 +172,9 @@
   issn         = {2184-4313}
 }
 
-@phdthesis{oai:irdb.nii.ac.jp:01211:0005350653,
+@phdthesis{Atarsaikhan,
   author = {アタルサイハン, ガントゥグス},
   title  = {Typographic Design Generation Using Neural Style Transfer},
   school = {九州大学},
-  year   = {2022},
-  url    = {https://irdb.nii.ac.jp/01211/0005350653}
+  year   = {2022}
 }
